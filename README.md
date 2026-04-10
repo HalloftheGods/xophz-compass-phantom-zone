@@ -25,7 +25,7 @@ Keep your site from becoming a ghost town by identifying dead end links.
 2. Upload `xophz-compass-phantom-zone` to `/wp-content/plugins/`.
 3. Activate through the Plugins menu.
 4. On activation, the plugin initializes the `wp_xophz_phantom_errors` database table.
-5. Access via the COMPASS dashboard → **Phantom Zone**.
+5. Access via the My Compass dashboard → **Phantom Zone**.
 
 ## Database Tables
 
