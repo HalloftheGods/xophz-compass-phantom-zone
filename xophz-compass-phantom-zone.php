@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Category:          Castle Walls
  * Plugin Name:       Xophz Phantom Pages
- * Plugin URI:        http://www.mycompassconsulting.com/
+ * Plugin URI:        https://github.com/HalloftheGods/xophz-compass-phantom-zone
  * Description:       Handle access to 404 pages, forbidden pages, and pages with 500 errors.  
  * Version:           26.4.24
  * Author:            Hall of the Gods, Inc.
