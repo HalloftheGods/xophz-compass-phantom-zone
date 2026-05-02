@@ -14,6 +14,7 @@
  *
  * @wordpress-plugin
  * Category:          Castle Walls
+ * Group:             ITSM
  * Plugin Name:       Xophz Phantom Pages
  * Plugin URI:        https://github.com/HalloftheGods/xophz-compass-phantom-zone
  * Description:       Handle access to 404 pages, forbidden pages, and pages with 500 errors.  
