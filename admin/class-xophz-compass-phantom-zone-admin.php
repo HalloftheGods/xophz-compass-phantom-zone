@@ -124,9 +124,16 @@ class Xophz_Compass_Phantom_Zone_Admin {
 		]);
 
 		register_rest_route('xophz-compass/v1', '/phantom-zone/errors', [
-			'methods' => 'GET',
-			'callback' => [$this, 'get_errors'],
-			'permission_callback' => function() { return current_user_can('manage_options'); }
+			[
+				'methods' => 'GET',
+				'callback' => [$this, 'get_errors'],
+				'permission_callback' => function() { return current_user_can('manage_options'); }
+			],
+			[
+				'methods' => 'DELETE',
+				'callback' => [$this, 'clear_errors'],
+				'permission_callback' => function() { return current_user_can('manage_options'); }
+			]
 		]);
 
 		register_rest_route('xophz-compass/v1', '/phantom-zone/stats', [
@@ -134,6 +141,13 @@ class Xophz_Compass_Phantom_Zone_Admin {
 			'callback' => [$this, 'get_stats'],
 			'permission_callback' => function() { return current_user_can('manage_options'); }
 		]);
+	}
+
+	public function clear_errors() {
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'xophz_phantom_errors';
+		$wpdb->query("TRUNCATE TABLE $table_name");
+		return new WP_REST_Response(['success' => true, 'message' => 'Error logs purged'], 200);
 	}
 
 	public function get_settings() {

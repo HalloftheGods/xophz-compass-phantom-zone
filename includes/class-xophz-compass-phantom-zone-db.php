@@ -29,10 +29,22 @@ class Xophz_Compass_Phantom_Zone_DB {
             user_agent text NOT NULL,
             created_at datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
             PRIMARY KEY  (id),
-            KEY error_code (error_code)
+            KEY error_code (error_code),
+            KEY created_at (created_at),
+            KEY code_created (error_code, created_at)
         ) $charset_collate;";
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );
+    }
+
+    /**
+     * Lightweight log cleanup to prevent database bloat
+     */
+    public static function prune_old_logs( $days = 30 ) {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'xophz_phantom_errors';
+        $days = (int) $days;
+        $wpdb->query( $wpdb->prepare( "DELETE FROM {$table_name} WHERE created_at < DATE_SUB(NOW(), INTERVAL %d DAY)", $days ) );
     }
 }
