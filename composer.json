@@ -1,7 +1,7 @@
 {
   "name": "hallofthegods/xophz-compass-phantom-zone",
   "description": "Handle access to 404 pages, forbidden pages, and pages with 500 errors.",
-  "version": "26.8.30",
+  "version": "26.9.4-181",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
   "authors": [
