@@ -54,8 +54,7 @@ function activate_xophz_compass_phantom_zone() {
  * This action is documented in includes/class-xophz-compass-phantom-zone-deactivator.php
  */
 function deactivate_xophz_compass_phantom_zone() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-xophz-compass-phantom-zone-deactivator.php';
-	Xophz_Compass_Phantom_Zone_Deactivator::deactivate();
+	Xophz_Compass_Phantom_Zone::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_xophz_compass_phantom_zone' );
